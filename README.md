@@ -11,8 +11,9 @@ We’re going through the process of making these calls using Edge Functions tha
 
 ## Table of Contents
 * [Technologies Used](#technologies-used)
-* [Workflows](#workflows)
-* [Screenshots and Recordings](#screenshots-recordings)
+* [API calls to gather data](#api-calls-to-gather-data)
+* [Creating Edge Function](#creating-edge-function)
+* [Connect to Metabase](#connect-to-metabase)
 
 
 ## Technologies Used
@@ -21,14 +22,35 @@ We’re going through the process of making these calls using Edge Functions tha
 - Javascript/Typescript
 - Jsonwebtoken
 
-## Workflows
+## API calls to gather data
+We'll need to first figure out the proper call we need to make, as well as identify the structure of the response.
 
+<img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/player_api_call.png?raw=true" alt="Player API Call" width="600">
 
-## Screenshots and Recordings
-![alt text](https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/json_player_info.png?raw=true)
+<br>
+
+<img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/json_playerinfo.png?raw=true" alt="JSON Player Info" width="600">
 
 <br>
 <br>
 
-![alt text](https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/player_api_call.png?raw=true)
+Using this information, we can create a table within Supabase.
+https://supabase.com/docs/guides/database/tables
+
+<img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/player_sql.png?raw=true" alt="Player SQL" width="600">
+
+
+## Creating Edge Function
+
+
+<img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/supabase-edge-function.png?raw=true" alt="Player SQL" width="600">
+
+
+## Connect to Metabase
+
+
+
+
+
+
 
