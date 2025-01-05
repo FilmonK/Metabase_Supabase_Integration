@@ -22,9 +22,10 @@ This isn’t a tutorial on using developer tools to analyze API calls—there ar
 - Javascript/Typescript
 - Jsonwebtoken
 - Docker
+- Deno
 
 ## API calls to gather data
-We'll need to first figure out the proper call we need to make, as well as identify the structure of the response.
+First, we need to identify the correct API call and understand the structure of its response. While a proper API simplifies this process, in our case, we must examine the browser's network calls. This involves reviewing elements such as the URL, headers, and parameters.
 
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/player_api_call.png?raw=true" alt="Player API Call" width="600">
 
@@ -34,7 +35,7 @@ We'll need to first figure out the proper call we need to make, as well as ident
 
 <br>
 
-Using this information, we can create a table within Supabase.  
+With this information, we can create a table in Supabase to store the data retrieved from the API call. 
 https://supabase.com/docs/guides/database/tables
 
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/player_sql.png?raw=true" alt="Player SQL" width="600">
@@ -71,7 +72,6 @@ supabase functions new player_usage
 
 4. Edit Your Function:
    - A "player_usage" folder should be created and the folder structure should look similar to this. Replace the sample code in index.ts with your logic for fetching player information.    
-
 <img width="252" alt="vscode" src="https://github.com/user-attachments/assets/20502c3b-25ed-4aa0-8aa9-8b38b6437eaf" />
 
  
@@ -99,7 +99,7 @@ If successful, you should see a response like: "Player data synced successfully"
 
 7. Handling Secrets  
 If your function depends on environment variables or secrets, such as PROJECT_URL or ESPN_S2, step 6 may fail without them properly set up. Supabase provides a straightforward way to manage these secrets.  
-<img width="853" alt="localsecrets" src="https://github.com/user-attachments/assets/be0f0e4e-77ea-4a92-8943-409b9b1c092b" />  
+<img width="600" alt="localsecrets" src="https://github.com/user-attachments/assets/be0f0e4e-77ea-4a92-8943-409b9b1c092b" />  
 
 <br>  
 <br> 
@@ -108,7 +108,7 @@ Supabase provides a straightforward way to manage these secrets in *Project Sett
 
  <br>
  
-<img width="957" alt="supasecrets" src="https://github.com/user-attachments/assets/5704ce7d-4d60-4e2d-9d5b-c02a5015a234" />
+<img width="600" alt="supasecrets" src="https://github.com/user-attachments/assets/5704ce7d-4d60-4e2d-9d5b-c02a5015a234" />
 
 
 <br>
