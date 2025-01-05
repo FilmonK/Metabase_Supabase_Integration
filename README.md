@@ -65,6 +65,19 @@ We can now replace the sample code in index.ts with what we'll need to get playe
 
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/supabase-edge-function.png?raw=true" alt="Player SQL" width="600">
 
+Next step is deploying the function from your local environment to the Supabase platform.  
+
+```
+supabase functions deploy player_usage
+```
+
+Test a deployed function by directly invoking it with a curl command.  
+```
+curl -L -X POST 'https://yourprojectID.supabase.co/functions/v1/player_usage' -H 'Authorization: Bearer [YOUR ANON KEY]' --data '{"name":"Functions"}'  
+```
+
+The project ID will be the same from the modal you viewed earlier which showed the commands to deploy functions. You also get it from Project Settings → General → General Settings.  
+
 
 ## Connect to Metabase
 Within Supabase, go to Project Settings → Database → Connect → Session pooler to get the necessary information.  
