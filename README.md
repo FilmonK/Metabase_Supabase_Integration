@@ -77,7 +77,6 @@ supabase functions new player_usage
  
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/supabase-edge-function.png?raw=true" alt="Player SQL" width="600">
 
-<br>
 
 5. Deploy your function to Supabase.  
 
@@ -95,6 +94,22 @@ curl -L -X POST 'https://yourprojectID.supabase.co/functions/v1/player_usage' -H
 
 The project ID will be the same from the modal you viewed earlier which showed the commands to deploy functions. You also get it from Project Settings → General → General Settings.  
 If successful, you should see a response like: "Player data synced successfully".
+
+<br>
+
+7. Handling Secrets  
+If your function depends on environment variables or secrets, such as PROJECT_URL or ESPN_S2, step 6 may fail without them properly set up. Supabase provides a straightforward way to manage these secrets.  
+<img width="853" alt="localsecrets" src="https://github.com/user-attachments/assets/be0f0e4e-77ea-4a92-8943-409b9b1c092b" />  
+
+<br>  
+<br> 
+
+Supabase provides a straightforward way to manage these secrets in *Project Settings → Edge Functions → Edge Function Secrets Management*   
+
+ <br>
+ 
+<img width="957" alt="supasecrets" src="https://github.com/user-attachments/assets/5704ce7d-4d60-4e2d-9d5b-c02a5015a234" />
+
 
 <br>
 <br>
@@ -116,10 +131,3 @@ https://www.metabase.com/docs/latest/databases/connections/postgresql
 ## Wrapping Up
 
 There you have it — your fantasy league data, finally tamed and visualized with a little help from Supabase and Metabase. Now it's a case of repeating the process of finding the needed calls from ESPN and creating functions in Supabase? And if you really want, get historical context to get an edge for next year. :smile:
-
-
-
-
-
-
-
