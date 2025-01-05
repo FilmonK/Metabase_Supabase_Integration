@@ -33,13 +33,14 @@ We'll need to first figure out the proper call we need to make, as well as ident
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/json_playerinfo.png?raw=true" alt="JSON Player Info" width="600">
 
 <br>
-<br>
 
 Using this information, we can create a table within Supabase.  
 https://supabase.com/docs/guides/database/tables
 
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/player_sql.png?raw=true" alt="Player SQL" width="600">
 
+<br>
+<br>
 
 ## Creating Edge Function
 To create and deploy Edge Functions in Supabase, follow these steps:
@@ -47,35 +48,44 @@ To create and deploy Edge Functions in Supabase, follow these steps:
    - Install Docker and the Supabase CLI. Supabase’s guide walks you through the installation process.
    - https://supabase.com/docs/guides/local-development/cli/getting-started  
 
+<br>
+
 2. Initialize Your Project:
    - Run the command supabase init to set up the project folder structure.
 
-3. Create and Deploy an Edge Function:
+<br>
+
+3. Create and deploy an Edge Function:
    - In the Supabase portal, go to Edge Functions and select Deploy a new Function.
    - There will be a modal that will show the commands needed to deploy a sample function, which you can use to build other functions.
 
      <img width="565" alt="newsamplefunction" src="https://github.com/user-attachments/assets/4b5534a0-b763-4235-8ed7-af4f029cc891" />
      
 
-   - To continue with the ESPN project, we'll run the same commands to create a new function.
+   - To continue with the ESPN project, we'll run the same commands to create a new function.  
 ```
 supabase functions new player_usage
 ```
 
+<br>
+
 4. Edit Your Function:
-   - Your folder structure should look similar to this. Replace the sample code in index.ts with your logic for fetching player information.    
+   - A "player_usage" folder should be created and the folder structure should look similar to this. Replace the sample code in index.ts with your logic for fetching player information.    
 
 <img width="252" alt="vscode" src="https://github.com/user-attachments/assets/20502c3b-25ed-4aa0-8aa9-8b38b6437eaf" />
 
  
-
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/supabase-edge-function.png?raw=true" alt="Player SQL" width="600">
+
+<br>
 
 5. Deploy your function to Supabase.  
 
 ```
 supabase functions deploy player_usage
 ```
+
+<br>
 
 6. Test function
    - Test a deployed function by directly invoking it with a curl command.  
@@ -86,6 +96,8 @@ curl -L -X POST 'https://yourprojectID.supabase.co/functions/v1/player_usage' -H
 The project ID will be the same from the modal you viewed earlier which showed the commands to deploy functions. You also get it from Project Settings → General → General Settings.  
 If successful, you should see a response like: "Player data synced successfully".
 
+<br>
+<br>
 
 ## Connect to Metabase
 Within Supabase, go to Project Settings → Database → Connect → Session pooler to get the necessary information.  
@@ -98,6 +110,8 @@ In Metabase, go to Admin Settings → Databases →  Add a database → and add 
 Use the session pool information from Supabase.  
 https://www.metabase.com/docs/latest/databases/connections/postgresql
 
+<br>
+<br>
 
 ## Wrapping Up
 
