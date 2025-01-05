@@ -6,14 +6,14 @@ Well, look at the API calls being made of course and grab that data. Before emba
 Sure enough there are python wrappers, some more updated than others, but then you’re relying on someone just like you to maintain a hobby project. 
 Life and/or boredom get in the way.
 
-This is not a walk through on how to look at your browser’s development tools to parse the calls made using your preferred programming language. There’s already plenty of those.
-We’re going through the process of making these calls using Edge Functions that are scheduled Cron jobs in Supabase, then displaying the tables in Metabase.
+This isn’t a tutorial on using developer tools to analyze API calls—there are plenty of those out there. Instead, we’ll focus on integrating Supabase Edge Functions and displaying the results in Metabase.  
 
 ## Table of Contents
 * [Technologies Used](#technologies-used)
 * [API calls to gather data](#api-calls-to-gather-data)
 * [Creating Edge Function](#creating-edge-function)
 * [Connect to Metabase](#connect-to-metabase)
+* [Wrapping Up](#wrapping-up)
 
 
 ## Technologies Used
@@ -42,41 +42,49 @@ https://supabase.com/docs/guides/database/tables
 
 
 ## Creating Edge Function
-Docker and the CLI will need to be installed before Edge Functions can be created, which Supabase has a walkthrough.  
-https://supabase.com/docs/guides/local-development/cli/getting-started  
+To create and deploy Edge Functions in Supabase, follow these steps:
+1. Install Prerequisites:
+   - Install Docker and the Supabase CLI. Supabase’s guide walks you through the installation process.
+   - https://supabase.com/docs/guides/local-development/cli/getting-started  
 
-Running the "supabase init" command will create folder structure in the directory you created to house the Supabase project.
+2. Initialize Your Project:
+   - Run the command supabase init to set up the project folder structure.
 
-Next go to Edge Functions → Deploy a new Function within the Supabase portal.  
-There will be a modal that will show the commands needed to deploy a sample function, which you can use to build other functions.
+3. Create and Deploy an Edge Function:
+   - In the Supabase portal, go to Edge Functions and select Deploy a new Function.
+   - There will be a modal that will show the commands needed to deploy a sample function, which you can use to build other functions.
 
-<img width="565" alt="newsamplefunction" src="https://github.com/user-attachments/assets/4b5534a0-b763-4235-8ed7-af4f029cc891" />
+     <img width="565" alt="newsamplefunction" src="https://github.com/user-attachments/assets/4b5534a0-b763-4235-8ed7-af4f029cc891" />
+     
 
-To continue with the ESPN project, we'll run the same commands to create a new function.
+   - To continue with the ESPN project, we'll run the same commands to create a new function.
 ```
 supabase functions new player_usage
 ```
 
-The folder structure should look something like this.  
+4. Edit Your Function:
+   - Your folder structure should look similar to this. Replace the sample code in index.ts with your logic for fetching player information.    
 
 <img width="252" alt="vscode" src="https://github.com/user-attachments/assets/20502c3b-25ed-4aa0-8aa9-8b38b6437eaf" />
 
-We can now replace the sample code in index.ts with what we'll need to get player information.  
+ 
 
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/supabase-edge-function.png?raw=true" alt="Player SQL" width="600">
 
-Next step is deploying the function from your local environment to the Supabase platform.  
+5. Deploy your function to Supabase.  
 
 ```
 supabase functions deploy player_usage
 ```
 
-Test a deployed function by directly invoking it with a curl command.  
+6. Test function
+   - Test a deployed function by directly invoking it with a curl command.  
 ```
 curl -L -X POST 'https://yourprojectID.supabase.co/functions/v1/player_usage' -H 'Authorization: Bearer [YOUR ANON KEY]' --data '{"name":"Functions"}'  
 ```
 
 The project ID will be the same from the modal you viewed earlier which showed the commands to deploy functions. You also get it from Project Settings → General → General Settings.  
+If successful, you should see a response like: "Player data synced successfully".
 
 
 ## Connect to Metabase
@@ -91,6 +99,9 @@ Use the session pool information from Supabase.
 https://www.metabase.com/docs/latest/databases/connections/postgresql
 
 
+## Wrapping Up
+
+There you have it — your fantasy league data, finally tamed and visualized with a little help from Supabase and Metabase. Now it's a case of repeating the process of finding the needed calls from ESPN and creating functions in Supabase? And if you really want, get historical context to get an edge for next year. :smile:
 
 
 
