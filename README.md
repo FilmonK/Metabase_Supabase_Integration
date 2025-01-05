@@ -36,7 +36,11 @@ First, we need to identify the correct API call and understand the structure of 
 <br>
 
 With this information, we can create a table in Supabase to store the data retrieved from the API call. 
-https://supabase.com/docs/guides/database/tables
+https://supabase.com/docs/guides/database/tables  
+
+<br>
+
+You can create this table either through the Table Editor or by using the [SQL Editor](https://supabase.com/docs/guides/database/overview#the-sql-editor) with a query like the one below.  
 
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/player_sql.png?raw=true" alt="Player SQL" width="600">
 
@@ -52,7 +56,7 @@ To create and deploy Edge Functions in Supabase, follow these steps:
 <br>
 
 2. Initialize Your Project:
-   - Run the command supabase init to set up the project folder structure.
+   - Run the command *"supabase init"* to set up the project folder structure.
 
 <br>
 
@@ -71,7 +75,7 @@ supabase functions new player_usage
 <br>
 
 4. Edit Your Function:
-   - A "player_usage" folder should be created and the folder structure should look similar to this. Replace the sample code in index.ts with your logic for fetching player information.    
+   - A *"player_usage"* folder should be created and the folder structure should look similar to this. Replace the sample code in index.ts with your logic for fetching player information.    
 <img width="252" alt="vscode" src="https://github.com/user-attachments/assets/20502c3b-25ed-4aa0-8aa9-8b38b6437eaf" />
 
  
