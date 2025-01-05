@@ -21,6 +21,7 @@ We’re going through the process of making these calls using Edge Functions tha
 - Supabase
 - Javascript/Typescript
 - Jsonwebtoken
+- Docker
 
 ## API calls to gather data
 We'll need to first figure out the proper call we need to make, as well as identify the structure of the response.
@@ -41,10 +42,26 @@ https://supabase.com/docs/guides/database/tables
 
 
 ## Creating Edge Function
-CLI  
+Docker and the CLI will need to be installed before Edge Functions can be created, which Supabase has a walkthrough.  
 https://supabase.com/docs/guides/local-development/cli/getting-started  
 
-https://supabase.com/docs/guides/functions/quickstart  
+Running the "supabase init" command will create folder structure in the directory you created to house the Supabase project.
+
+Next go to Edge Functions → Deploy a new Function within the Supabase portal.  
+There will be a modal that will show the commands needed to deploy a sample function, which you can use to build other functions.
+
+<img width="565" alt="newsamplefunction" src="https://github.com/user-attachments/assets/4b5534a0-b763-4235-8ed7-af4f029cc891" />
+
+To continue with the ESPN project, we'll run the same commands to create a new function.
+```
+supabase functions new player_usage
+```
+
+The folder structure should look something like this.  
+
+<img width="252" alt="vscode" src="https://github.com/user-attachments/assets/20502c3b-25ed-4aa0-8aa9-8b38b6437eaf" />
+
+We can now replace the sample code in index.ts with what we'll need to get player information.  
 
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/supabase-edge-function.png?raw=true" alt="Player SQL" width="600">
 
