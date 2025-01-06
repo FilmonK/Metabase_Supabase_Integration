@@ -71,12 +71,19 @@ To create and deploy Edge Functions in Supabase, follow these steps:
    - There will be a modal that will show the commands needed to deploy a sample function, which you can use to build other functions.
 
      <img width="565" alt="newsamplefunction" src="https://github.com/user-attachments/assets/4b5534a0-b763-4235-8ed7-af4f029cc891" />
-     
 
-   - To continue with the ESPN project, we'll run the same commands to create a new function.  
+   - If you run into authentication related errors in the CLI, you may have to log back in using the following command *"supabase login"*  
+     This should return the following response: *"Hello from Supabase! Press Enter to open browser and login automatically."*  
+     Proceed to open the browser to receive a verification code which will be entered in the CLI  
+     <img width="614" alt="cli_login" src="https://github.com/user-attachments/assets/7414bd19-bbd7-4738-8c83-abcc3a53bf43" />
+
+   - To continue with the ESPN project, we'll run the same commands to create a new function.
+  
 ```
 supabase functions new player_usage
 ```
+
+  
 
 <br>
 
