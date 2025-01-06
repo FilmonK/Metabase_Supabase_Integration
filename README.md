@@ -120,7 +120,18 @@ Supabase provides a straightforward way to manage these secrets in *Project Sett
 
  <br>
  
-<img width="600" alt="supasecrets" src="https://github.com/user-attachments/assets/5704ce7d-4d60-4e2d-9d5b-c02a5015a234" />
+<img width="600" alt="supasecrets" src="https://github.com/user-attachments/assets/5704ce7d-4d60-4e2d-9d5b-c02a5015a234" />     
+
+<br>  
+<br> 
+ 
+8. Scheduling  
+You have the ability to schedule when these Edge Functions are executed if this needs to be a recurring event.  
+Integrations → Cron
+https://supabase.com/blog/supabase-cron
+
+<img width="430" alt="cronjobs" src="https://github.com/user-attachments/assets/c7ba2647-05c6-4102-9345-fca268f001ca" />
+
 
 
 <br>
