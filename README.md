@@ -96,13 +96,17 @@ supabase functions new player_usage
 <br>
 
 4. Edit Your Function:
-   - A *"player_usage"* folder should be created and the folder structure should look similar to this. Replace the sample code in index.ts with your logic for fetching player information. Here's a link to the sample code [Supabase Edge Function](https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/espn_calls/playerStartUsage.js)
-  
+   - A `"player_usage"` folder should be created and the folder structure should look similar to this.
+   - Replace the sample code in `index.ts` with your logic for fetching player information.
+   - Here's a link to the sample code: [Supabase Edge Function](...)
 
-<img width="252" alt="vscode" src="https://github.com/user-attachments/assets/20502c3b-25ed-4aa0-8aa9-8b38b6437eaf" />
+Below is the folder structure:
 
- 
-<img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/supabase-edge-function.png?raw=true" alt="Player SQL" width="600">
+<img src="https://github.com/user-attachments/assets/20502c3b-25ed-4aa0-8aa9-8b38b6437eaf" width="400" alt="VSCode Folder Tree" />
+
+And here’s what the Edge Function looks like:
+
+<img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/supabase-edge-function.png?raw=true" width="600" alt="Supabase Edge Function Code" />
 
 
 5. Deploy your function to Supabase.  
