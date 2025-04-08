@@ -31,7 +31,7 @@ Here’s the sample code for scraping ESPN player usage.
 
 
 
-<img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/player_api_call.png?raw=true" alt="Player API Call" width="600">
+<img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/javascript_function.png?raw=true" alt="Player API Call" width="600">
 
 <br>
 
