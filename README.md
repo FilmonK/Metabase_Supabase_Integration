@@ -26,7 +26,9 @@ This isn’t a tutorial on using developer tools to analyze API calls—there ar
 
 ## API calls to gather data
 First, we need to identify the correct API call and understand the structure of its response. While a proper API simplifies this process, in our case, we must examine the browser's network calls. This involves reviewing elements such as the URL, headers, and parameters.  
-Here's a link to the sample code [Player Start Usage JavaScript](https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/espn_calls/playerStartUsage.js)
+Here’s the sample code for scraping ESPN player usage.  
+👉 [`playerStartUsage.js`](https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/espn_calls/playerStartUsage.js)
+
 
 
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/player_api_call.png?raw=true" alt="Player API Call" width="600">
@@ -42,7 +44,9 @@ https://supabase.com/docs/guides/database/tables
 
 <br>
 
-You can create this table either through the Table Editor or by using the [SQL Editor](https://supabase.com/docs/guides/database/overview#the-sql-editor) with a query like the one below. Here's a link to the sample code [Player Table SQL](https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/sql/player_table.sql)  
+You can create this table either through the Table Editor or by using the [SQL Editor](https://supabase.com/docs/guides/database/overview#the-sql-editor) with a query like the one below. 
+👉 [`player_table.sql`](https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/sql/player_table.sql)
+
 
 
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/player_sql.png?raw=true" alt="Player SQL" width="600">  
@@ -121,7 +125,9 @@ If successful, you should see a response like: "Player data synced successfully"
 <br>
 
 7. Handling Secrets  
-If your function depends on environment variables or secrets, such as PROJECT_URL or ESPN_S2, step 6 may fail without them properly set up. Supabase provides a straightforward way to manage these secrets.  
+If your function depends on environment variables or secrets, such as PROJECT_URL or ESPN_S2, step 6 may fail without them properly set up. Supabase provides a way to manage secrets in:  
+**Project Settings → Edge Functions → Edge Function Secrets Management**
+
 <img width="600" alt="localsecrets" src="https://github.com/user-attachments/assets/be0f0e4e-77ea-4a92-8943-409b9b1c092b" />  
 
 <br>  
