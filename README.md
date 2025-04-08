@@ -33,18 +33,19 @@ Here’s the sample code for scraping ESPN player usage.
 
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/javascript_function.png?raw=true" alt="Player API Call" width="600">
 
-<br>
+
 
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/json_playerinfo.png?raw=true" alt="JSON Player Info" width="600">
 
-<br>
+
 
 With this information, we can create a table in Supabase to store the data retrieved from the API call. 
 https://supabase.com/docs/guides/database/tables  
 
-<br>
 
-You can create this table either through the Table Editor or by using the [SQL Editor](https://supabase.com/docs/guides/database/overview#the-sql-editor) with a query like the one below. 
+
+You can create this table either through the Table Editor or by using the [SQL Editor](https://supabase.com/docs/guides/database/overview#the-sql-editor) with a query like the one below.  
+Here’s the sample code for creating the table.  
 👉 [`player_table.sql`](https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/sql/player_table.sql)
 
 
@@ -53,22 +54,18 @@ You can create this table either through the Table Editor or by using the [SQL E
 
 
 
-
-<br>
-<br>
-
 ## Creating Edge Function
 To create and deploy Edge Functions in Supabase, follow these steps:
 1. Install Prerequisites:
    - Install Docker and the Supabase CLI. Supabase’s guide walks you through the installation process.
    - https://supabase.com/docs/guides/local-development/cli/getting-started  
 
-<br>
+<br><br>
 
 2. Initialize Your Project:
    - Run the command *"supabase init"* to set up the project folder structure.
 
-<br>
+<br><br>
 
 3. Create and deploy an Edge Function:
    - In the Supabase portal, go to Edge Functions and select Deploy a new Function.
@@ -91,9 +88,7 @@ To create and deploy Edge Functions in Supabase, follow these steps:
 supabase functions new player_usage
 ```
 
-  
-
-<br>
+<br><br>
 
 4. Edit Your Function:
    - A `"player_usage"` folder should be created and the folder structure should look similar to this.
@@ -103,12 +98,14 @@ supabase functions new player_usage
 Below is the folder structure:
 
 <img src="https://github.com/user-attachments/assets/20502c3b-25ed-4aa0-8aa9-8b38b6437eaf" width="400" alt="VSCode Folder Tree" />
+<br><br>
 
 
 And here’s what the Edge Function looks like:
 
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/supabase_function.png?raw=true" width="600" alt="Supabase Edge Function Code" />
 
+<br><br>
 
 5. Deploy your function to Supabase.  
 
@@ -116,7 +113,7 @@ And here’s what the Edge Function looks like:
 supabase functions deploy player_usage
 ```
 
-<br>
+<br><br>
 
 6. Test function
    - Test a deployed function by directly invoking it with a curl command.  
@@ -127,25 +124,23 @@ curl -L -X POST 'https://yourprojectID.supabase.co/functions/v1/player_usage' -H
 The project ID will be the same from the modal you viewed earlier which showed the commands to deploy functions. You also get it from Project Settings → General → General Settings.  
 If successful, you should see a response like: "Player data synced successfully".
 
-<br>
+<br><br>
 
 7. Handling Secrets  
 If your function depends on environment variables or secrets, such as PROJECT_URL or ESPN_S2, step 6 may fail without them properly set up. Supabase provides a way to manage secrets in:  
 **Project Settings → Edge Functions → Edge Function Secrets Management**
 
-<img width="600" alt="localsecrets" src="https://github.com/user-attachments/assets/be0f0e4e-77ea-4a92-8943-409b9b1c092b" />  
+<img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/environment_variables.png?raw=true" alt="Player API Call" width="600">
 
-<br>  
-<br> 
+<br>
 
 Supabase provides a straightforward way to manage these secrets in *Project Settings → Edge Functions → Edge Function Secrets Management*   
 
- <br>
+<br>
  
 <img width="600" alt="supasecrets" src="https://github.com/user-attachments/assets/5704ce7d-4d60-4e2d-9d5b-c02a5015a234" />     
 
-<br>  
-<br> 
+<br><br>
  
 8. Scheduling  
 You have the ability to schedule when these Edge Functions are executed if this needs to be a recurring event.  
@@ -154,15 +149,11 @@ https://supabase.com/blog/supabase-cron
 
 <img width="430" alt="cronjobs" src="https://github.com/user-attachments/assets/c7ba2647-05c6-4102-9345-fca268f001ca" />
 
-
-
-<br>
-<br>
+<br><br>
 
 ## Connect to Metabase
 Within Supabase, go to Project Settings → Database → Connect → Session pooler to get the necessary information.  
 <img src="https://github.com/FilmonK/Metabase_Supabase_Integration/blob/main/readme_media/sessionpool.png?raw=true" alt="Player SQL" width="600">
-
 
 <br>
 
@@ -170,8 +161,8 @@ In Metabase, go to Admin Settings → Databases →  Add a database → and add 
 Use the session pool information from Supabase.  
 https://www.metabase.com/docs/latest/databases/connections/postgresql
 
-<br>
-<br>
+<br><br>
+
 
 ## Wrapping Up
 
